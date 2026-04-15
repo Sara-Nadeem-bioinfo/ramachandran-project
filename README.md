@@ -1,77 +1,180 @@
-## Ramachandran Plot of Alanine Dipeptide
+# Ramachandran Plot Analysis of Alanine Dipeptide
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Domain](https://img.shields.io/badge/Domain-Computational%20Biology-purple)
+![Visualization](https://img.shields.io/badge/Visualization-Matplotlib-orange)
+
+> Modeling protein backbone conformations using Ramachandran plots and computational energy landscapes.
 
 ---
 
-### Objective
+##  Overview
 
-To generate and analyze the Ramachandran plot (φ vs ψ) for alanine dipeptide.
+This project explores the backbone conformations of **alanine dipeptide** by analyzing φ (phi) and ψ (psi) dihedral angles.
 
----
+Two approaches were implemented:
 
-## Approaches
-
-### 1. OpenMM + MDTraj (Attempt)
-
-* Used molecular dynamics simulation
-* Goal: generate trajectory and extract φ/ψ
-
-Issues:
-
-* Residue labeled as `UNL`
-* Forcefield could not recognize molecule
-* Simulation failed
+* Molecular simulation attempt using OpenMM
+* Analytical modeling of conformational energy landscape
 
 ---
 
-### 2. Analytical Energy Model (Final)
+##  Why This Project Matters
 
-* Generated φ/ψ values across full range
-* Modeled energy landscape using mathematical function
-* Visualized using contour plot
+Understanding protein backbone conformations is fundamental to:
 
-✔ Successfully reproduced:
+* Protein folding studies
+* Drug design
+* Structural bioinformatics
 
-* α-helix region
-* β-sheet region
-
----
-
-## Challenges
-
-* Forcefield incompatibility with non-standard residues
-* MDTraj requires protein-like backbone
+Alanine dipeptide serves as a minimal model system to explore these concepts computationally.
 
 ---
 
-## Output
+##  Objectives
 
-* Energy contour Ramachandran plot
-* Clear conformational basins
+* Construct alanine dipeptide structure
+* Measure backbone dihedral angles
+* Generate Ramachandran plot
+* Identify α-helix and β-sheet regions
+* Model conformational energy landscape
 
 ---
 
-## Run Final Version
+## ⚙️ Tools & Technologies
 
-```id="run1"
+*  Avogadro — molecular structure building
+*  OpenMM — molecular simulation
+*  MDTraj — dihedral angle analysis
+*  Python (NumPy, Matplotlib) — computation & visualization
+
+---
+
+##  Methodology
+
+### 1. Structure Preparation
+
+* Built alanine dipeptide in Avogadro
+* Ensured correct peptide bond geometry
+
+### 2. Dihedral Angle Analysis
+
+* Measured φ and ψ angles
+* Observed extended conformation (~180°)
+
+### 3. Simulation Attempt (OpenMM)
+
+* Attempted MD simulation setup
+* Encountered forcefield limitation (`UNL residue`)
+
+### 4. Final Approach (Analytical Model)
+
+* Generated φ and ψ values across full range
+* Computed energy using simplified function
+* Visualized conformational landscape
+
+---
+
+##  Skills Demonstrated
+
+* Molecular structure modeling
+* Computational simulation setup (OpenMM)
+* Structural analysis using MDTraj
+* Data visualization (Matplotlib)
+* Scientific problem solving & debugging
+* Git & GitHub version control
+
+---
+
+##  Results
+
+ Shows clustering in:
+
+* **α-helix region**
+* **β-sheet region**
+
+---
+
+### Energy Contour Plot
+
+![Energy Plot](energy_plot.png)
+
+ Represents:
+
+* Stable conformations (low energy regions)
+* Allowed conformational space
+
+---
+
+## Interpretation
+
+* Dense clusters indicate energetically favorable conformations
+* α-helix region (~ -60°, -40°) is clearly observed
+* β-sheet region (~ -120°, 120°) is also present
+* Energy contour highlights stable conformational basins
+
+These results align with known protein backbone behavior.
+
+---
+
+## Challenges & Learnings
+
+* OpenMM requires properly defined residues (ACE–ALA–NME)
+* Non-standard residues cause forcefield errors
+* Ramachandran plots require multiple conformations, not a single structure
+* Analytical models can approximate conformational landscapes effectively
+
+---
+
+## Limitations
+
+* OpenMM simulation was limited by non-standard residue definitions
+* Analytical model approximates energy rather than computing it explicitly
+* Single-molecule system lacks full protein context
+
+---
+
+## Future Work
+
+* Perform full MD simulation with proper residue parameterization
+* Generate trajectory-based Ramachandran plots
+* Compare with experimental protein datasets
+* Extend analysis to larger peptides/proteins
+
+---
+
+##  How to Run
+
+```bash
 pip install -r requirements.txt
 python ramachandran_model.py
 ```
 
 ---
 
-## Key Learning
+## Project Structure
 
-* Ramachandran plots require multiple conformations
-* MD simulation depends on correct residue templates
-* Analytical models can approximate conformational space
+```
+ramachandran_project/
+│
+├── ala.pdb
+├── ramachandran_model.py      # Final working model
+├── ramachandran_openmm.py     # Initial simulation attempt
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## Files
+## Author
 
-* `ramachandran_openmm.py` → initial simulation attempt
-* `ramachandran_model.py` → final working solution
+**Sarah Nadeem**
+MSc Computational Biology
 
+---
+
+If you found this project useful, feel free to star the repository!
 ---
 ##  Sample Output
 

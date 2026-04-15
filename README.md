@@ -73,4 +73,6 @@ python ramachandran_model.py
 * `ramachandran_model.py` → final working solution
 
 ---
+##  Sample Output
 
+![Ramachandran Plot](ramachandran_plot.png)

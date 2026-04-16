@@ -169,7 +169,7 @@ ramachandran_project/
 
 ## Author
 
-**Sarah Nadeem**
+**Sara Nadeem**
 MSc Computational Biology
 
 ---
